@@ -1,13 +1,34 @@
 <template>
-    $END$
+  <div>
+    <table-caption></table-caption>
+    <div class="table">
+      <table-header></table-header>
+      <div class="table__body">
+        <table-filter></table-filter>
+        <table-body></table-body>
+      </div>
+    </div>
+  </div>
 </template>
-
 <script>
-    export default {
-        name: "AppTable"
-    }
+import TableBody from "./TableBody";
+import TableFilter from "./TableFilter";
+export default {
+  name: "AppTable",
+  components: {
+    TableBody,
+    TableFilter
+  },
+
+
+};
 </script>
+<style scoped lang="scss">
+.table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 
-<style scoped>
 
+}
 </style>

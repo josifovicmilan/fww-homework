@@ -1,0 +1,30 @@
+$font-primary: 'Roboto';
+$font-secondary: 'Monserrat';
+
+//break points
+$bp-xl: 81.25em;  //1300px
+$bp-lg: 62.5em; //1000px
+$bp-md: 56.25em; //900px
+$bp-sm: 40.625em; //650px
+$bp-xs: 28.125em; //450px
+
+//FONT SIZE
+$default-font-size: 1.8rem;
+
+
+//COLORS
+$color-white: #fdfdfd;
+$color-grey-light-1: #f3f3f3;
+$color-grey-light-2: #e3e3e3;
+$color-grey-dark-1: #787878;
+$color-grey-dark-2: #535353;
+$color-grey-dark-3: #3b3b3b;
+
+$color-blue-light: #7999a5;
+$color-blue: #568ea6;
+$color-blue-1: #1b5c70;
+$color-navy:#305f72;
+$color-purple:#653583;
+
+$color-red: rgba(206, 10, 10, 0.88);
+$color-green : rgba(1, 104, 25, 0.78);

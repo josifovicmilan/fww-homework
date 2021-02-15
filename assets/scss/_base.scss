@@ -1,0 +1,32 @@
+//begin reset
+*{
+  margin: 0;
+  padding: 0;
+
+}
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+//end reset
+
+html{
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 62.25%; //1 rem = 10px, 10px hocemo 16 je browser default, pa dobijamo 10/16
+  @media screen and (max-width: $bp-lg) {
+    font-size: 56.25%;
+  }
+  @media screen and (max-width: $bp-md) {
+    font-size: 50%;
+  }
+  @media screen and (max-width: $bp-sm) {
+    font-size: 43.75%;
+  }
+}
+body{
+  font-family: $font-primary;
+  font-weight: 400;
+  line-height: 1.6;
+}
