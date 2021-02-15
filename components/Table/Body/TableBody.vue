@@ -1,26 +1,20 @@
 <template>
   <div class="table__body">
-    <table-item v-for="user in users.users" :user="user" :key="user.id"></table-item>
+    <body-item v-for="user in users.users" :user="user" :key="user.id"></body-item>
   </div>
 </template>
 
 <script>
-import TableItem from "./TableItem";
+import BodyItem from "./BodyItem";
 export default {
   name: "TableBody",
 
   components: {
-    TableItem,
+    BodyItem,
   },
   computed: {
     users() {
       return this.$store.getters["filteredUsers"];
-    },
-    perPage(){
-      return this.$store.getters['perPage'];
-    },
-    currentPage(){
-      return this.$store.getters['currentPage']
     },
   },
 };

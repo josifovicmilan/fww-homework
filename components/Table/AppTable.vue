@@ -11,13 +11,15 @@
   </div>
 </template>
 <script>
-import TableBody from "./TableBody";
-import TableFilter from "./TableFilter";
+  import TableCaption from "./Caption/TableCaption";
+import TableBody from "./Body/TableBody";
+import TableFilter from "./Filter/TableFilter";
 export default {
   name: "AppTable",
   components: {
     TableBody,
-    TableFilter
+    TableFilter,
+    TableCaption
   },
 
 

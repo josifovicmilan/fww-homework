@@ -7,6 +7,13 @@
 </template>
 
 <script>
-export default {}
+  import AppTable from "../components/Table/AppTable";
+  import AppPagination from "../components/Pagination/AppPagination";
+export default {
+  components:{
+    AppTable,
+    AppPagination
+  }
+}
 </script>
 

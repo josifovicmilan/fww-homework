@@ -1,12 +1,12 @@
 <template>
-    <div class="table__list">
-      <div class="table__list-item">{{ user.fullName }}</div>
-      <div class="table__list-item">{{ user.balance }}</div>
-      <div class="table__list-item" ><span :class="{active: user.isActive, inactive: !user.isActive }">{{ user.isActive ? 'active' : 'inactive' }}</span></div>
-      <div class="table__list-item">{{ timestamp(user.registered) }}</div>
-      <div class="table__list-item">{{ user.state }}</div>
-      <div class="table__list-item">{{ user.country }}</div>
-    </div>
+    <ul class="table__list">
+      <li class="table__list-item">{{ user.fullName }}</li>
+      <li class="table__list-item">{{ user.balance }}</li>
+      <li class="table__list-item" ><span :class="{active: user.isActive, inactive: !user.isActive }">{{ user.isActive ? 'active' : 'inactive' }}</span></li>
+      <li class="table__list-item">{{ timestamp(user.registered) }}</li>
+      <li class="table__list-item">{{ user.state }}</li>
+      <li class="table__list-item">{{ user.country }}</li>
+    </ul>
 </template>
 
 <script>
@@ -40,6 +40,7 @@
     background-color: $color-red;
   }
   .table__list{
+    list-style-type: none;
     display: flex;
     flex-direction: row;
 

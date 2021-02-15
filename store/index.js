@@ -117,8 +117,8 @@ export const getters = {
     };
   },
   users: (state) => state.users,
-  countries: (state) => state.countries,
-  states: (state) => state.states,
+  countries: (state) => state.countries.sort((a,b) => a.value> b.value ? 1 : -1),
+  states: (state) => state.states.sort((a,b) => a.value> b.value ? 1 : -1),
   perPage: (state) => state.perPage,
   currentPage: (state) => state.currentPage,
 };
