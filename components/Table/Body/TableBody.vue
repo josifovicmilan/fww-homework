@@ -8,7 +8,6 @@
 import BodyItem from "./BodyItem";
 export default {
   name: "TableBody",
-
   components: {
     BodyItem,
   },

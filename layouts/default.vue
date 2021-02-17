@@ -10,7 +10,6 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    /*align-self: center;*/
-     background-color: $color-grey-light-1;
+    background-color: $color-grey-light-1;
   }
 </style>

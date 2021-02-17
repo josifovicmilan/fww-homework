@@ -37,6 +37,8 @@ export const mutations = {
         });
       });
     });
+    state.countries.sort((a,b) => a.value> b.value ? 1 : -1);
+    state.states.sort((a,b) => a.value> b.value ? 1 : -1)
     state.pageCount = Math.ceil(state.users.length / state.perPage);
   },
   sort(state, options) {
@@ -50,24 +52,23 @@ export const mutations = {
       );
     }
   },
-  addOrEditFilter(state, filter) {
+  addOrEditFilter(state, flt) {
     const index = state.filters.findIndex(
-      (flt) => flt.filterBy === filter.filterBy
+      (item) => item.filterBy === flt.filterBy
     );
     if (index === -1) {
       state.filters.push({
-        filterBy: filter.filterBy,
-        value: filter.value,
+        filterBy: flt.filterBy,
+        value: flt.value,
       });
     } else {
-      state.filters[index].value = filter.value;
+      state.filters[index].value = flt.value;
     }
   },
   removeFilter(state, flt) {
-    const removeFilterId = state.filters.findIndex((item) => {
-      return item.filterBy === flt.filterBy;
-    });
-    state.filters.splice(removeFilterId, 1);
+    const index = state.filters.findIndex((item) => item.filterBy === flt.filterBy);
+    if(index === -1) return;
+    state.filters.splice(index, 1);
   },
   setDisplayPerPage(state, perPage) {
     state.perPage = perPage;
@@ -76,7 +77,6 @@ export const mutations = {
     state.currentPage = pageNumber;
   },
 };
-
 export const getters = {
   getPaginationValues(state) {
     return state.paginationValues;
@@ -117,8 +117,8 @@ export const getters = {
     };
   },
   users: (state) => state.users,
-  countries: (state) => state.countries.sort((a,b) => a.value> b.value ? 1 : -1),
-  states: (state) => state.states.sort((a,b) => a.value> b.value ? 1 : -1),
+  countries: (state) => state.countries,
+  states: (state) => state.states,
   perPage: (state) => state.perPage,
   currentPage: (state) => state.currentPage,
 };

@@ -6,7 +6,7 @@
           class="pagination__button"
           @click="setPageNumber(1)"
           :disabled="isInFirstPage"
-          :class="{disabled: isInFirstPage}"
+          :class="{ disabled: isInFirstPage }"
         >
           First
         </button>
@@ -15,7 +15,7 @@
         <button
           class="pagination__button"
           @click="setPageNumber(currentPage - 1)"
-          :class="{disabled: isInFirstPage}"
+          :class="{ disabled: isInFirstPage }"
         >
           Prev
         </button>
@@ -25,7 +25,7 @@
           :disabled="page.isDisabled"
           @click="setPageNumber(page.name)"
           class="pagination__button"
-          :class="{disabled: page.isDisabled}"
+          :class="{ disabled: page.isDisabled }"
         >
           {{ page.name }}
         </button>
@@ -35,7 +35,7 @@
           class="pagination__button"
           @click="setPageNumber(currentPage + 1)"
           :disabled="isInLastPage"
-          :class="{disabled: isInLastPage}"
+          :class="{ disabled: isInLastPage }"
         >
           Next
         </button>
@@ -45,7 +45,7 @@
           class="pagination__button"
           @click="setPageNumber(numOfPages)"
           :disabled="isInLastPage"
-          :class="{disabled: isInLastPage}"
+          :class="{ disabled: isInLastPage }"
         >
           Last
         </button>
@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "AppPagination",
   data() {
@@ -87,7 +88,6 @@ export default {
       return this.currentPage - 1;
     },
     pages() {
-      console.log(this.numOfPages)
       const range = [];
       for (
         let i = this.startPage;
@@ -95,7 +95,7 @@ export default {
         Math.min(this.startPage + this.maxVisibleButtons - 1, this.numOfPages);
         i++
       ) {
-        if(i>0) {
+        if (i > 0) {
           range.push({
             name: i,
             isDisabled: i === this.currentPage,
@@ -104,24 +104,19 @@ export default {
       }
       return range;
     },
-    totalNumberOfUsers() {
-      return this.$store.getters["filteredUsers"];
-    },
-    perPage() {
-      return this.$store.getters["perPage"];
-    },
     numOfPages() {
       return Math.ceil(this.totalNumberOfUsers.userCount / this.perPage);
     },
-    currentPage() {
-      return this.$store.getters["currentPage"];
-    },
+    ...mapGetters({
+      currentPage: "currentPage",
+      perPage: "perPage",
+      totalNumberOfUsers: "filteredUsers",
+    }),
   },
 };
 </script>
 
 <style scoped lang="scss">
-
 .pagination {
   background-color: $color-grey-light-1;
   margin: 2rem;
@@ -131,16 +126,16 @@ export default {
     list-style-type: none;
   }
   &__button {
-    padding: .3rem .3rem;
-    font-size: .9rem;
+    padding: 0.3rem 0.3rem;
+    font-size: 0.9rem;
     font-family: inherit;
-    border: .1rem solid $color-blue;
+    border: 0.1rem solid $color-blue;
     background-color: $color-white;
     color: $color-blue;
     cursor: pointer;
   }
 }
-.disabled{
+.disabled {
   color: $color-grey-light-2;
   cursor: not-allowed;
 }

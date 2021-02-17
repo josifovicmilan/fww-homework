@@ -83,12 +83,6 @@ export default {
       ],
     };
   },
-  computed: {
-    ...mapGetters({
-      countries: "countries",
-      states: "states",
-    }),
-  },
   methods: {
     filterSelect(event, filterBy) {
       if (event.target.value === null || event.target.value === "") {
@@ -102,7 +96,14 @@ export default {
           value: event.target.value,
         });
       }
+      this.$store.commit("updatePage", 1);
     },
+  },
+  computed: {
+    ...mapGetters({
+      countries: "countries",
+      states: "states",
+    }),
   },
 };
 </script>

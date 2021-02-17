@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-  import TableCaption from "./Caption/TableCaption";
+import TableCaption from "./Caption/TableCaption";
 import TableBody from "./Body/TableBody";
 import TableFilter from "./Filter/TableFilter";
 export default {
@@ -21,8 +21,6 @@ export default {
     TableFilter,
     TableCaption
   },
-
-
 };
 </script>
 <style scoped lang="scss">
@@ -30,7 +28,5 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-
-
 }
 </style>

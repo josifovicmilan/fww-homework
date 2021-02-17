@@ -10,21 +10,21 @@
 </template>
 
 <script>
-  import HeaderItem from "./HeaderItem";
-    export default {
-        name: "TableHeader",
-      components:{
-          HeaderItem
-      }
-    }
+import HeaderItem from "./HeaderItem";
+export default {
+  name: "TableHeader",
+  components: {
+    HeaderItem,
+  },
+};
 </script>
 
 <style scoped lang="scss">
-  .table__header {
-    display: flex;
-    background-color: $color-blue-1;
-    color: $color-white;
-    border-radius: 1rem 1rem 0 0;
-    height: 4rem;
-  }
+.table__header {
+  display: flex;
+  background-color: $color-blue-1;
+  color: $color-white;
+  border-radius: 1rem 1rem 0 0;
+  height: 4rem;
+}
 </style>

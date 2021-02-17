@@ -44,13 +44,11 @@ export default {
       border-right: 0.1rem solid white;
     }
   }
-
 .table__icon {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   &-up,
   &-down {
     fill: $color-grey-light-1;
@@ -62,11 +60,9 @@ export default {
       fill: $color-grey-dark-1;
     }
   }
-
   &-up {
     transform: rotate(-90deg);
   }
-
   &-down {
     transform: rotate(90deg);
   }
